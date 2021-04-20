@@ -3,7 +3,7 @@ version: '3'
 services:
     rabbitmq:
         image: 'rabbitmq:3.8-management-alpine'
-        container_name: codeflix-rabbitmq
+        container_name: micro-catalog-rabbitmq
         hostname: rabbitmq
         ports:
             - 15672:15672
@@ -14,8 +14,8 @@ services:
             - RABBITMQ_DEFAULT_USER=admin
             - RABBITMQ_DEFAULT_PASS=admin
         networks:
-            - codeflix
+            - micro-catalog
 
 networks:
-    codeflix:
+    micro-catalog:
         driver: bridge
